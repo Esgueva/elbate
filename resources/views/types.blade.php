@@ -84,7 +84,7 @@
             <div class="content">
                 
                 <div class="title m-b-md">
-                    Cañas de Dulzaina
+                    Tipos de cañas
                 </div>
 
                 <div class="links">
