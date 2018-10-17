@@ -4,65 +4,18 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="favicon.ico">
 
-        <title>Cañas de Dulzaina</title>
+        <title>Cañas de Dulzaina - El Bate</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+        <!-- Boostrap Core -->
+        <link href="css/bootstrap.css" rel="stylesheet">
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        <!-- Custom  -->
+        <link href="css/custom.css" rel="stylesheet">
     </head>
 
     <body>
@@ -88,13 +41,18 @@
                 </div>
 
                 <div class="links">
-                    <a href="/types">Tipos</a>
-                    <a href="/offers">Ofertas</a>
-                    <a href="/about">Acerca</a>
-                    <a href="/contact">Contacto</a>
+                    <a href="/tipos">Tipos</a>
+                    <a href="/ofertas">Ofertas</a>
+                    <a href="/acerca">Acerca</a>
+                    <a href="/contacto">Contacto</a>
                 </div>
 
             </div>
         </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first + Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="js/bootstrap.min.js"></script>
     </body>
 </html>

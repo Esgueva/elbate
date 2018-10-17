@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Contacto - El Bate</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -63,32 +64,21 @@
             }
         </style>
     </head>
+
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
 
             <div class="content">
+
                 <div class="title m-b-md">
                     Contacto
                 </div>
 
                 <div class="links">
-                    <a href="/types">Tipos</a>
-                    <a href="/offers">Ofertas</a>
-                    <a href="/about">Acerca</a>
-                    <a href="/contact">Contacto</a>
+                    <a href="/tipos">Tipos</a>
+                    <a href="/ofertas">Ofertas</a>
+                    <a href="/acerca">Acerca</a>
+                    <a href="/contacto">Contacto</a>
                 </div>
 
             </div>

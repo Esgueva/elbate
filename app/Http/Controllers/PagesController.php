@@ -28,6 +28,3 @@ class PagesController extends Controller{
 		return view('contact');
 	}
 }
-
-
-//php artisan make:controller PagesController
