@@ -28,6 +28,10 @@
       <li class="nav-item active">
         <a class="nav-link" href="/contacto">Contacto</a>
       </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/pedidos">Pedidos</a>
+      </li>
     
     </ul>
   

@@ -18,3 +18,5 @@ Route::get('/ofertas','PagesController@offers');
 Route::get('/acerca','PagesController@about');
 Route::get('/contacto','PagesController@contact');
 
+Route::get('/pedidos','PedidosController@create');
+Route::post('/pedidos','PedidosController@store');
