@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Http\Requests\PedidoFormRequest;
+
 use App\Pedido;
+
+use Illuminate\Support\Facades\Mail;
 
 class PedidosController extends Controller
 {
@@ -15,7 +19,8 @@ class PedidosController extends Controller
      */
     public function index()
     {
-        //
+        $pedidos = Pedido::all();
+        return view('pedidos.index',compact('pedidos'));
     }
 
     /**
@@ -42,10 +47,16 @@ class PedidosController extends Controller
             'title' => $request -> get('titulo'),
             'content' => $request -> get('contenido'),
             'slug' => $slug,
-
         ));
 
         $pedido->save();
+        $data = array(
+            'pedido'=> $slug,);
+
+        Mail::send('emails.pedidos', $data, function($message){
+        $message->from('esgueva.dam@gmail.com','Rodrigo Esgueva');
+        $message->to('esgueva.dam@gmail.com')->subject('Test Email');
+    });
 
         return redirect('/pedidos')->with('status','Su pedido ha sido creado con exito. Su id de pedido es: ' .$slug);
 
@@ -58,9 +69,10 @@ class PedidosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $pedido = Pedido::whereSlug($slug)->firstOrFail();
+        return view('pedidos.show',compact('pedido'));
     }
 
     /**
@@ -69,9 +81,10 @@ class PedidosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+         $pedido = Pedido::whereSlug($slug)->firstOrFail();
+         return view('pedidos.edit', compact('pedido'));
     }
 
     /**
@@ -92,8 +105,10 @@ class PedidosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        $pedido = Pedido::whereSlug($slug)->firstOrFail();
+        $pedido->delete();
+        return redirect('/pedidos')->with('status','El pedido ' .$slug.' ha sido borrado.');
     }
 }

@@ -16,7 +16,23 @@ Route::get('/','PagesController@home');
 Route::get('/tipos','PagesController@types');
 Route::get('/ofertas','PagesController@offers');
 Route::get('/acerca','PagesController@about');
-Route::get('/contacto','PagesController@contact');
+//Route::get('/contacto','PagesController@contact');
 
-Route::get('/pedidos','PedidosController@create');
-Route::post('/pedidos','PedidosController@store');
+Route::post('/contacto' ,'PedidosController@store');
+Route::get ('/contacto' ,'PedidosController@create');
+Route::get ('/pedidos','PedidosController@index');
+Route::get ('/pedido/{slug?}','PedidosController@show');
+Route::post('/pedido/{slug?}/edit','PedidosController@edit');
+Route::post('/pedido/{slug?}/delete','PedidosController@destroy');
+
+Route::get('email',function(){
+	$data = array('name'=> "Cañas de Dulzaina",);
+
+	Mail::send('emails.welcome', $data, function($message){
+		$message->from('esgueva.dam@gmail.com','Esgueva');
+		$message->to('esgueva.dam@gmail.com')->subject('TIENES UN NUEVO PEDIDO');
+	});
+
+	return "Tu email ha sido enviado con exito.";
+
+});
