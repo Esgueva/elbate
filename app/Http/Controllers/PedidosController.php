@@ -50,6 +50,7 @@ class PedidosController extends Controller
         ));
 
         $pedido->save();
+        
         $data = array(
             'pedido'=> $slug,);
 
@@ -72,7 +73,8 @@ class PedidosController extends Controller
     public function show($slug)
     {
         $pedido = Pedido::whereSlug($slug)->firstOrFail();
-        return view('pedidos.show',compact('pedido'));
+        $comments = $pedido->comments()->get();
+        return view('pedidos.show',compact('pedido','comments'));
     }
 
     /**

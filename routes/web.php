@@ -24,6 +24,7 @@ Route::get ('/pedidos','PedidosController@index');
 Route::get ('/pedido/{slug?}','PedidosController@show');
 Route::post('/pedido/{slug?}/edit','PedidosController@edit');
 Route::post('/pedido/{slug?}/delete','PedidosController@destroy');
+Route::post('/comment','CommentsController@newComment');
 
 Route::get('email',function(){
 	$data = array('name'=> "Cañas de Dulzaina",);
